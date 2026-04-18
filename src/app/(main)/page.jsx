@@ -1,6 +1,6 @@
 import { Plus } from 'lucide-react';
-import data from './data/friends.json';
-import StatCard from '../components/StatCard';
+import data from '../data/friends.json';
+import StatCard from '@/components/StatCard';
 
 const statusStyle = {
   'overdue': 'bg-[#EF4444]',

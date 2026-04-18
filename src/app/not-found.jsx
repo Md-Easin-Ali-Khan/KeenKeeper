@@ -2,6 +2,7 @@
 const NotFound = () => {
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center py-24 sm:py-32">
+            <h1 className="text-9xl">Have to change font</h1>
             <p className="text-base font-semibold text-[#244D3F] uppercase tracking-wide">
                 404 Error
             </p>
