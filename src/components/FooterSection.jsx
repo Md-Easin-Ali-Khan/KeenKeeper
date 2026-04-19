@@ -18,7 +18,7 @@ const FooterSection = () => {
                 <hr className="mt-10 border-t-2 text-[#265646]"></hr>
                 <div className="flex flex-col items-center gap-4 md:gap-0 md:flex-row md:justify-between my-[30px]">
                     <p className="text-gray-400">© 2026 KeenKeeper. All rights reserved.</p>
-                    <ul className="flex text-gray-400 space-x-11">
+                    <ul className="flex justify-center text-gray-400 gap-5 md:gap-10">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Cookies</a></li>
