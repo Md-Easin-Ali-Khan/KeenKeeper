@@ -15,8 +15,8 @@ const StatSection = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto justify-center gap-6">
             {stats.map((stat, index) => (
-                <div key={index} className="bg-white text-center p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                    <h2 className="font-semibold text-[32px] mb-2">{stat.value}</h2>
+                <div key={index} className="bg-white text-center p-8 rounded-lg shadow-sm">
+                    <h2 className="font-semibold text-[32px] text-[#244D3F] mb-2">{stat.value}</h2>
                     <p className="font-normal text-lg text-[#64748B]">{stat.label}</p>
                 </div>
             ))}

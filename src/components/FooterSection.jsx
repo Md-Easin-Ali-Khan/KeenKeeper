@@ -1,11 +1,14 @@
+import Link from "next/link";
 
 const FooterSection = () => {
     return (
-        <section className="bg-[#244D3F] pt-20 px-4 xl:px-0">
+        <section className="bg-[#244D3F] pt-7 md:pt-20 px-4 xl:px-0">
 
             <div className="max-w-6xl mx-auto">
                 <div className="flex flex-col items-center text-center">
-                    <h2 className="font-bold text-white text-5xl sm:text-6xl mb-4">KeenKeeper</h2>
+                    <Link href={'/'}>
+                        <h2 className="font-bold text-white text-5xl sm:text-6xl mb-4">KeenKeeper</h2>
+                    </Link>
                     <p className="text-[#FFFFFF] mb-6">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                     <h3 className="font-medium text-xl text-[#FFFFFF] mb-4">Social Links</h3>
                     <ul className="flex space-x-4">
