@@ -34,11 +34,11 @@ const FriendDetails = ({ params }) => {
 
     const handleAction = (type) => {
         addEntry(type, name);
-        toast.success(`${type} logged!`);
+        toast.success(`${type} with ${name}`);
     };
 
     return (
-        <section className="max-w-6xl mx-auto my-10 md:my-20 text-[#E9E9E9]">
+        <section className="max-w-6xl mx-auto my-10 md:my-20 text-[#E9E9E9] px-4 xl:px-0">
 
             <div className="grid grid-cols-3 gap-6">
                 <div className="col-span-3 md:col-span-1">

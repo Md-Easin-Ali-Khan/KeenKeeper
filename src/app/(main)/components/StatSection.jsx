@@ -1,4 +1,4 @@
-import data from '../app/data/friends.json';
+import data from '../../data/friends.json';
 
 const total = data.length;
 const onTrack = data.filter(friend => friend.status === 'on-track').length;

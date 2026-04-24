@@ -1,5 +1,5 @@
 'use client'
-import data from '../app/data/friends.json';
+import data from '../../data/friends.json';
 import Link from 'next/link';
 
 const statusStyle = {

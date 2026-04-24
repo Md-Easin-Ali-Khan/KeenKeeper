@@ -1,6 +1,6 @@
 import { Plus } from 'lucide-react';
-import FriendCard from '@/components/FriendCard';
-import StatSection from '@/components/StatSection';
+import FriendCard from '@/app/(main)/components/FriendCard';
+import StatSection from '@/app/(main)/components/StatSection';
 
 export default function Home() {
 

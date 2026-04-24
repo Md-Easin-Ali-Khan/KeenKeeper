@@ -13,22 +13,32 @@ const TimelinePage = () => {
   });
 
   return (
-    <div className="">
+    <div>
 
-      <div className="max-w-6xl mx-auto my-10 md:my-20">
+      <div className="relative max-w-6xl mx-auto my-10 md:my-20 px-4 xl:px-0">
 
-        <h1 className="text-[#244D3F] font-bold text-5xl mb-6">Timeline</h1>
-        <div className="mb-6">
-          <select
+        <h1 className="text-[#244D3F] font-bold text-5xl mb-6 text-center md:text-left">Timeline</h1>
+        <div className="relative w-full md:max-w-80 mb-6  bg-[#F8FAFC] border-2 border-[#E9E9E9] rounded-lg">
+          <select className="font-normal text-lg text-[#64748B] appearance-none w-full p-4"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className=""
           >
             <option value="All">All</option>
             <option value="Call">Call</option>
             <option value="Text">Text</option>
             <option value="Video">Video</option>
           </select>
+
+          <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
         </div>
 
         {/* Timeline list */}
@@ -39,24 +49,22 @@ const TimelinePage = () => {
               className="bg-white rounded-lg shadow-sm py-[21.5px] px-4">
               <div className="flex gap-4 items-center">
 
-                <div className="">
+                <div>
                   <img className="w-10 h-10"
                     src={
-                      item.type === "Call" ? "/hand_shake.png" :
+                      item.type === "Call" ? "/phone.png" :
                         item.type === "Text" ? "/massage.png" :
                           "/call.png"
                     }
                     alt={item.title} />
                 </div>
 
-                <div className="font-normal text-lg text-[#64748B]">
-                  <p className={
-                    item.type === "Call" ? "font-medium text-xl text-[#244D3F]" :
-                      item.type === "Text" ? "font-medium text-xl text-[#244D3F]" :
-                        "font-medium text-xl text-[#244D3F]"
-                  }>
-                    {item.title}</p>
-                  <p className="">
+                <div className="font-normal space-y-1 text-lg text-[#64748B]">
+                  <p>
+                    {item.title}
+                  </p>
+
+                  <p className="text-[16px]">
                     {new Date(item.date).toLocaleDateString()}
                   </p>
                 </div>
