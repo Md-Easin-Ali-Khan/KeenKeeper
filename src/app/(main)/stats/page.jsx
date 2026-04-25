@@ -1,16 +1,23 @@
 "use client";
 
 import { useTimeline } from "@/context/TimelineContext";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+} from "recharts";
 
-const COLORS = ["#7C3AED", "#1F4D3F", "#34A853"];
+const color = ["#7E35E1", "#244D3F", "#37A163"];
 
 const StatsPage = () => {
   const { timeline } = useTimeline();
 
   const counts = {
-    Call: 0,
     Text: 0,
+    Call: 0,
     Video: 0,
   };
 
@@ -24,37 +31,60 @@ const StatsPage = () => {
     { name: "Text", value: counts.Text },
     { name: "Call", value: counts.Call },
     { name: "Video", value: counts.Video },
-  ];
+  ].filter((item) => item.value > 0);
 
   return (
-    <div className="max-w-6xl mx-auto my-10 md:my-20 px-4 xl:px-0">
-      <h1 className="text-[#244D3F] font-bold text-5xl mb-10 text-center md:text-left">
-        Friendship Analytics
-      </h1>
+    <div className="px-4 xl:px-0">
+      <div className="max-w-6xl mx-auto my-10 md:my-20">
+        <h1 className="font-bold text-3xl md:text-5xl text-[#244D3F] mb-6 text-center md:text-left">
+          Friendship Analytics
+        </h1>
 
-      <div className="bg-white rounded-lg shadow-sm p-6 flex justify-center">
-        <h2>By Interaction Type</h2>
+        <div className="bg-white rounded-lg shadow-sm w-full p-8">
+          <h2 className="font-medium text-xl text-[#244D3F] text-center md:text-left">
+            By Interaction Type
+          </h2>
 
-        <div className="w-[300px] h-[300px]">
-          <ResponsiveContainer>
-            <PieChart>
-              <Pie
-                data={data}
-                dataKey="value"
-                nameKey="name"
-                innerRadius={70}
-                outerRadius={100}
-                paddingAngle={5}
-                cornerRadius={10}
-              >
-                {data.map((entry, index) => (
-                  <Cell key={index} fill={COLORS[index]} />
-                ))}
-              </Pie>
+          <div className=" flex items-center justify-center">
+            <div className="w-full h-[400px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Tooltip
+                    contentStyle={{
+                      borderRadius: "8px",
+                      border: "1px solid #E9E9E9",
+                    }}
+                  />
+                  <Pie
+                    data={data}
+                    dataKey="value"
+                    innerRadius={70}
+                    outerRadius={100}
+                    paddingAngle={5}
+                  >
+                    {data.map((entry, index) => (
+                      <Cell key={index} fill={color[index]} />
+                    ))}
+                  </Pie>
 
-              <Legend verticalAlign="bottom" align="center" iconType="circle" />
-            </PieChart>
-          </ResponsiveContainer>
+                  <Legend
+                    verticalAlign="bottom"
+                    align="center"
+                    iconType="circle"
+                    iconSize={10}
+                    wrapperStyle={{
+                      paddingTop: "30px",
+                    }}
+                    formatter={(value) => (
+                      <span className="font-normal text-[14px] text-[#64748B] mr-6 text-center">
+                        {value}
+                      </span>
+                    )}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </div>
       </div>
     </div>
