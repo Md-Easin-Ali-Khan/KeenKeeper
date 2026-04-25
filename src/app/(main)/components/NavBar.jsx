@@ -50,7 +50,7 @@ const NavBar = () => {
             className={`md:hidden bg-white shadow-lg p-5 transition-all duration-500 absolute left-0 w-full z-50 flex flex-col items-center space-y-2.5 ${open ? "top-full opacity-100" : "-top-[400px] opacity-0"}`}
           >
             <li className="w-full text-center">
-              <Link
+              <Link onClick={() => setOpen(false)}
                 className={`${pathname === "/" ? "text-white bg-[#244D3F]" : ""} block py-3 px-4 font-semibold text-gray-500`}
                 href={"/"}
               >
@@ -58,7 +58,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="w-full text-center">
-              <Link
+              <Link onClick={() => setOpen(false)}
                 className={`${pathname === "/timeline" ? "text-white bg-[#244D3F]" : ""} block py-3 px-4 font-semibold text-gray-500`}
                 href={"/timeline"}
               >
@@ -66,7 +66,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="w-full text-center">
-              <Link
+              <Link onClick={() => setOpen(false)}
                 className={`${pathname === "/stats" ? "text-white bg-[#244D3F]" : ""} block py-3 px-4 font-semibold text-gray-500`}
                 href={"/stats"}
               >

@@ -6,7 +6,7 @@ import { Toaster } from "react-hot-toast"
 export default function MainLayout({ children }) {
     return (
         <>
-            <TimelineProvider>
+            <TimelineProvider >
                 <NavBar></NavBar>
 
                 {children}
